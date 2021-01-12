@@ -1,10 +1,12 @@
+require('dotenv').config()
+
 // create an express app
 const express = require("express");
 const app = express();
 
 const { MongoClient } = require("mongodb");
 
-const uri = "mongodb+srv://USERNAME:PASSWORD@CLUSTER_NAME.n9z04.mongodb.net/DATABASE_NAME?retryWrites=true&w=majority";
+const uri = process.env.MONGODB_URI;
 
 // use the express-static middleware
 app.use(express.static("public"));
